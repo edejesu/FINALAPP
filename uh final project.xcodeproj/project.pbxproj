@@ -101,9 +101,9 @@
 			children = (
 				3F78AAF31CB4149F00442E82 /* AppDelegate.swift */,
 				3F78AAF51CB4149F00442E82 /* art.scnassets */,
+				3F78AAFC1CB4149F00442E82 /* Assets.xcassets */,
 				3F78AAF71CB4149F00442E82 /* GameViewController.swift */,
 				3F78AAF91CB4149F00442E82 /* Main.storyboard */,
-				3F78AAFC1CB4149F00442E82 /* Assets.xcassets */,
 				3F78AAFE1CB4149F00442E82 /* LaunchScreen.storyboard */,
 				3F78AB011CB4149F00442E82 /* Info.plist */,
 			);
@@ -492,6 +492,7 @@
 				3F78AB1C1CB4149F00442E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F78AB1D1CB4149F00442E82 /* Build configuration list for PBXNativeTarget "uh final projectTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +501,7 @@
 				3F78AB1F1CB4149F00442E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F78AB201CB4149F00442E82 /* Build configuration list for PBXNativeTarget "uh final projectUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +510,7 @@
 				3F78AB221CB4149F00442E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
