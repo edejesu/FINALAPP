@@ -10,31 +10,41 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class GameViewController: UIViewController, UICollisionBehaviorDelegate {
+class GameViewController: UIViewController, UICollisionBehaviorDelegate
+{
     
-    var ball = UIView()
-    var ballbehavior = UIDynamicItemBehavior()
-    var myDynamicAnimator = UIDynamicAnimator()
-    var allObjects : [UIView] = []
-    var animator : UIDynamicAnimator? = nil
-    var gravity = UIGravityBehavior()
+    var animator: UIDynamicAnimator!
+    var gravity: UIGravityBehavior!
+    var collision: UICollisionBehavior!
+
     
-    
-    
+
+  
     override func viewDidLoad()
     {
+        view.backgroundColor = UIColor.blackColor()
         super.viewDidLoad()
-        ball = UIView(frame: CGRectMake(5, 15, 20, 20))
-        ball.layer.cornerRadius = 10
-        ball.backgroundColor = UIColor.whiteColor() //for right now keep it white, later change to picture(pizza)
-        ball.clipsToBounds = true
+        //example square
+        let ball = UIView(frame: CGRect(x: 100, y: 100, width: 20, height: 20))
+        ball.backgroundColor = UIColor.grayColor()
         view.addSubview(ball)
+        ball.layer.cornerRadius = 10
+        ball.clipsToBounds = true
+        //example barries
+        let barrier = UIView(frame: CGRect(x: 0, y: 300, width: 130, height: 20))
+        barrier.backgroundColor = UIColor.redColor()
+        view.addSubview(barrier)
         
+        //makes ball fall
         animator = UIDynamicAnimator(referenceView: view)
         gravity = UIGravityBehavior(items: [ball])
-        animator!.addBehavior(gravity)
+        animator.addBehavior(gravity)
+        //making boundries
+        collision = UICollisionBehavior(items: [ball])
+        collision.addBoundaryWithIdentifier("barrier", forPath: UIBezierPath(rect: barrier.frame)) //makes barries stay in place when hit by the block
+        collision.translatesReferenceBoundsIntoBoundary = true //stays in frame
+        animator.addBehavior(collision)
 
-        
+    }
 
-}
 }
