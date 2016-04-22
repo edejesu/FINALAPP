@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="clr-BE-hEB">
             <objects>
-                <viewController id="mwd-3U-ko5" sceneMemberID="viewController">
+                <viewController title="View Controller" id="mwd-3U-ko5" customClass="GameViewController" customModule="uh_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5sT-Qj-AMo"/>
                         <viewControllerLayoutGuide type="bottom" id="PCV-K2-6Ez"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPf-2T-pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826.5" y="-193.5"/>
+            <point key="canvasLocation" x="1719.5" y="-211.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zva-2j-jaz">
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="729" y="-472"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="oUo-wr-N8C">
             <objects>
-                <viewController id="CUT-Rb-bmM" sceneMemberID="viewController">
+                <viewController id="CUT-Rb-bmM" customClass="_GameViewController" customModule="uh_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="94z-EA-bcO"/>
                         <viewControllerLayoutGuide type="bottom" id="h2r-eu-BGw"/>
