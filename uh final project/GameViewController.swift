@@ -18,6 +18,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     var collision: UICollisionBehavior!
 
     
+    @IBOutlet var bottomButton: UILabel!
 
   
     override func viewDidLoad()

@@ -16,6 +16,7 @@ class _GameViewController: GameViewController
     let motionManager: CMMotionManager = CMMotionManager()
     var paddle: SKSpriteNode!
 
+    @IBOutlet weak var topbutton: UILabel!
 
     override func viewDidLoad()
     {
@@ -24,25 +25,4 @@ class _GameViewController: GameViewController
 
     }
 
- //   func didMoveToView()
-//    {
-//        motionManager.startAccelerometerUpdates()
-
-        // Get node of object to move
-  //      let paddle = childNodeWithName(PaddleCategoryName) as! SKSpriteNode
-        
-        // Get MotionManager data
-    //    if let data = motionManager.accelerometerData {
-            
-            // Only get use data if it is "tilt enough"
-      //      if (fabs(data.acceleration.x) > 0.2) {
-                
-                // Apply force to the moving object
-        //        paddle.physicsBody!.applyForce(CGVectorMake(40.0 * CGFloat(data.acceleration.x), 0))
-                
-          //  }
-     //   }
-        
-  //  }
-    
 }

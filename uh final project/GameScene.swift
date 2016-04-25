@@ -10,7 +10,6 @@ import SpriteKit
 import CoreMotion
 
 class GameScene: SKScene
-    //all from warrens trump shooter
 {
 
 
