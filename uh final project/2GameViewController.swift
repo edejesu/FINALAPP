@@ -16,7 +16,6 @@ class _GameViewController: GameViewController
     let motionManager: CMMotionManager = CMMotionManager()
     var paddle: SKSpriteNode!
 
-    @IBOutlet weak var topbutton: UILabel!
 
     override func viewDidLoad()
     {
