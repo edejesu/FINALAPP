@@ -18,7 +18,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     var collision: UICollisionBehavior!
 
     
-    @IBOutlet var bottomButton: UILabel!
 
   
     override func viewDidLoad()
@@ -47,5 +46,10 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         animator.addBehavior(collision)
 
     }
+    @IBAction func Swipped(sender: UISwipeGestureRecognizer)
+    {
+     print("swipped")
+    }
+    
 
 }
