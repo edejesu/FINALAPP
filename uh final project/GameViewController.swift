@@ -17,10 +17,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
     var ball = UIView()
-    var brick = UIView()
-    var brickArray : [UIView] = []
-    var timer = NSTimer()
-    var counter = 0
+    var swipe = UISwipeGestureRecognizer()
 
     
     @IBOutlet weak var startButton: UIButton!
@@ -50,14 +47,50 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         gravity = UIGravityBehavior(items: [ball])
         animator.addBehavior(gravity)
         movingBricks()
-        startButton.alpha = 0
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.timerAction), userInfo: nil, repeats: true)
+        //behaviors to moving brick
+        
+        
+        
+        
+        
+        
+        
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: ("Swipped:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: ("Swipped:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
+        
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
+        self.view!.addGestureRecognizer(leftSwipe)
+        self.view!.addGestureRecognizer(rightSwipe)
+        //added !
+        
+        ball.addGestureRecognizer(rightSwipe)
+        ball.addGestureRecognizer(leftSwipe)
+        ball.userInteractionEnabled = true
+        swipe.enabled = true
+        
+        Swipped(rightSwipe)
+        Swipped(leftSwipe)
+        
+        
+        
+   
     }
-    func timerAction()
-    {
-        counter += 1
-        timerLabel.text = "\(counter)"
-    }
+    
+    
+    
+    
+    
+    
+    
     
     func addBehaviorsToBricks()
     {
@@ -74,23 +107,75 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
         ballBehavior.elasticity = 0.0
         ballBehavior.density = 0.0
         animator.addBehavior(ballBehavior)
-        }
+       
     }
     
-    // RANDOM LINE BREAKS
-    func lineBreaks()
-    {
-        for bricks in brickArray
-        {
-            bricks.willRemoveSubview(bricks)
-            //make this random
-        }
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func Swipped(sender: UISwipeGestureRecognizer)
     {
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: ("Swipped:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: ("Swipped:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
+        
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
+        ball.addGestureRecognizer(rightSwipe)
+        ball.addGestureRecognizer(leftSwipe)
+        ball.userInteractionEnabled = true
+        swipe.enabled = true
+        
+        self.view.addGestureRecognizer(leftSwipe)
+        self.view.addGestureRecognizer(rightSwipe)
+        
+        
+        if (sender.direction == .Left)
+            {
+                print("did swipe left")
+                var ballPosition = CGPointMake(self.ball.frame.origin.x - 100.0, self.ball.frame.origin.y);
+                ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
+                }
+        
+        if (sender.direction == .Right)
+                {
+                    print("Swipe Right")
+                    var ballPosition = CGPointMake(self.ball.frame.origin.x + 100.0, self.ball.frame.origin.y);
+                                                                            //original was 50.0
+                    ball.frame = CGRectMake( ballPosition.x , ballPosition.y , self.ball.frame.size.width, self.ball.frame.size.height)
+                    
+                    // ORIGINAL: var ballPosition = CGPointMake(self.ball.frame.origin.x + 50.0, self.ball.frame.origin.y);
+                    // ORIGINAL First One: var ballPosition = CGPointMake(self.ball.frame.origin.x - 50.0, self.ball.frame.origin.y);
+                }
+        
      print("swipped")
         
     }
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
    func movingBricks()
    {
@@ -102,6 +187,13 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     collision = UICollisionBehavior(items: [ball])
     collision.translatesReferenceBoundsIntoBoundary = false
     animator.addBehavior(collision)
+    
+
+  //  collision.addBoundaryWithIdentifier("ball", forPath: UIBezierPath(rect: ball.frame))
+    //  collision.addBoundaryWithIdentifier("brickView", forPath: UIBezierPath(rect: brickView.frame))
+
+
+  
 
     }
     
