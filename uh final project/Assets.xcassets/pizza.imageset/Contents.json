@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Sky.jpg",
+      "filename" : "pizza.jpg",
       "scale" : "1x"
     },
     {
@@ -11,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Sky-1.jpg",
       "scale" : "3x"
     }
   ],
