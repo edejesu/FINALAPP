@@ -21,6 +21,7 @@ class HighScoreViewController: UIViewController
     
     override func viewDidLoad()
     {
+      //  if highScore > label1.text
         super.viewDidLoad()
     }
 

@@ -95,6 +95,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
    func movingBricks()
    {
     NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(GameViewController.makeBricks), userInfo: nil, repeats: true)
+    animator.updateItemUsingCurrentState(brick)
+
 
     NSTimer.scheduledTimerWithTimeInterval(0.04, target: self, selector: #selector(GameViewController.obstacleMove), userInfo: nil, repeats: true)
     collision = UICollisionBehavior(items: [ball])
@@ -106,7 +108,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     
     func makeBricks()
     {
-        brickArray = []
          let brick = UIView(frame: CGRectMake(0, 600, 500, 30))
         brick.backgroundColor = UIColor.redColor()
         //(patternImage: UIImage(named: "brick")!)
@@ -130,6 +131,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+       // var highScore =
         var highScoreView = segue.destinationViewController as! HighScoreViewController
     }
     
